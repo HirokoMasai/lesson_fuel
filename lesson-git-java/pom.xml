@@ -1,6 +1,167 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>lesson-git-java</groupId>
-  <artifactId>lesson-git-java</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+<project xmlns="http://maven.apache.org/pom/4.0.0" xmlns:xsi="http://www.w3.org/2001/xmlschema-instance" xsi:schemalocation="http://maven.apache.org/pom/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelversion>4.0.0</modelversion>
+  <groupid>lesson-git-java</groupid>
+  <artifactid>lesson-git-java</artifactid>
+  <version>0.0.1-snapshot</version>
+  <packaging>war</packaging>
+  <name>${project.artifactId}</name>
+
+  <build>
+    <plugins>
+      <!-- コンパイラの設定 -->
+      <plugin>
+        <groupid>org.apache.maven.plugins</groupid>
+        <artifactid>maven-compiler-plugin</artifactid>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+          <encoding>utf-8</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupid>org.springframework</groupid>
+      <artifactid>spring-webmvc</artifactid>
+      <version>4.2.3.release</version>
+     </dependency>
+    <!-- javax.servlet -->
+    <dependency>
+      <groupid>javax.servlet</groupid>
+      <artifactid>servlet-api</artifactid>
+      <version>2.5</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupid>javax.servlet</groupid>
+      <artifactid>jsp-api</artifactid>
+      <version>2.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupid>javax.servlet</groupid>
+      <artifactid>jstl</artifactid>
+      <version>1.2</version>
+    </dependency>
+
+    <!-- validation -->
+    <dependency>
+      <groupid>javax.validation</groupid>
+      <artifactid>validation-api</artifactid>
+      <version>1.1.0.cr3</version>
+    </dependency>
+    <dependency>
+      <groupid>org.hibernate</groupid>
+      <artifactid>hibernate-validator</artifactid>
+      <version>5.0.0.final</version>
+    </dependency>
+
+    <!-- spring framework -->
+    <dependency>
+      <groupid>org.springframework</groupid>
+      <artifactid>spring-context</artifactid>
+      <version>3.2.2.release</version>
+    </dependency>
+    <dependency>
+      <groupid>org.springframework</groupid>
+      <artifactid>spring-core</artifactid>
+      <version>3.2.2.release</version>
+    </dependency>
+    <dependency>
+      <groupid>org.springframework</groupid>
+      <artifactid>spring-web</artifactid>
+      <version>3.2.2.release</version>
+    </dependency>
+    <dependency>
+      <groupid>org.springframework</groupid>
+      <artifactid>spring-aop</artifactid>
+      <version>3.2.2.release</version>
+    </dependency>
+    <dependency>
+      <groupid>org.springframework</groupid>
+      <artifactid>spring-tx</artifactid>
+      <version>3.2.2.release</version>
+    </dependency>
+    <dependency>
+      <groupid>org.springframework</groupid>
+      <artifactid>spring-jdbc</artifactid>
+      <version>3.2.2.release</version>
+    </dependency>
+    <dependency>
+      <groupid>org.springframework</groupid>
+      <artifactid>spring-orm</artifactid>
+      <version>3.2.2.release</version>
+    </dependency>
+
+    <!-- spring security -->
+    <dependency>
+      <groupid>org.springframework.security</groupid>
+      <artifactid>spring-security-acl</artifactid>
+      <version>3.1.2.release</version>
+    </dependency>
+    <dependency>
+      <groupid>org.springframework.security</groupid>
+      <artifactid>spring-security-config</artifactid>
+      <version>3.1.2.release</version>
+    </dependency>
+    <dependency>
+      <groupid>org.springframework.security</groupid>
+      <artifactid>spring-security-core</artifactid>
+      <version>3.1.2.release</version>
+    </dependency>
+    <dependency>
+      <groupid>org.springframework.security</groupid>
+      <artifactid>spring-security-taglibs</artifactid>
+      <version>3.1.2.release</version>
+    </dependency>
+    <dependency>
+      <groupid>org.springframework.security</groupid>
+      <artifactid>spring-security-web</artifactid>
+      <version>3.1.2.release</version>
+    </dependency>
+
+    <!-- tiles -->
+    <dependency>
+      <groupid>org.apache.tiles</groupid>
+      <artifactid>tiles-api</artifactid>
+      <version>2.2.2</version>
+    </dependency>
+    <dependency>
+      <groupid>org.apache.tiles</groupid>
+      <artifactid>tiles-core</artifactid>
+      <version>2.2.2</version>
+      <exclusions>
+      <exclusion>
+      <artifactid>jcl-over-slf4j</artifactid>
+      <groupid>org.slf4j</groupid>
+      </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupid>org.apache.tiles</groupid>
+      <artifactid>tiles-jsp</artifactid>
+      <version>2.2.2</version>
+    </dependency>
+    <dependency>
+      <groupid>org.apache.tiles</groupid>
+      <artifactid>tiles-servlet</artifactid>
+      <version>2.2.2</version>
+    </dependency>
+    <dependency>
+      <groupid>org.apache.tiles</groupid>
+      <artifactid>tiles-template</artifactid>
+      <version>2.2.2</version>
+    </dependency>
+
+    <!-- junit -->
+    <dependency>
+      <groupid>junit</groupid>
+      <artifactid>junit-dep</artifactid>
+      <version>4.4</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
 </project>
